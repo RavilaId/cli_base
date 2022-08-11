@@ -9,7 +9,7 @@
                         <span class="opacity-75">x</span>
                     </span>
                     <span class="smini-hidden">
-                        VUE32<span class="opacity-75">AdminTool</span>
+                        Webiot<span class="opacity-75">Admin</span>
                     </span>
                 </router-link>
                 <!-- END Logo -->
@@ -17,7 +17,8 @@
                 <div>
                     <!-- Close Sidebar, Visible only on mobile screens -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout" data-action="sidebar_close">
+                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout"
+                        data-action="sidebar_close">
                         <i class="fa fa-times-circle"></i>
                     </button>
                     <!-- END Close Sidebar -->
@@ -35,6 +36,12 @@
                         <router-link :to="{ name: 'home' }" :class="index">
                             <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
                             <span class="nav-main-link-name">Inicio</span>
+                        </router-link>
+                    </li>
+                    <li class="nav-main-item">
+                        <router-link :to="{ name: 'dashboard' }" :class="index">
+                            <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
+                            <span class="nav-main-link-name">Dashboard</span>
                         </router-link>
                     </li>
                     <li class="nav-main-heading">Configuraciones</li>
@@ -58,13 +65,15 @@
                     </li>
                     <li class="nav-main-heading">Acciones</li>
                     <li class="nav-main-item">
-                        <a @click="showAlertConfirm('Reiniciar', '¿Está seguro de reiniciar el dispositivo?', 'question', 'restart')" class="nav-main-link" style="cursor:pointer;">
+                        <a @click="showAlertConfirm('Reiniciar', '¿Está seguro de reiniciar el dispositivo?', 'question', 'restart')"
+                            class="nav-main-link" style="cursor:pointer;">
                             <i class="nav-main-link-icon fa fa-redo-alt"></i>
                             <span class="nav-main-link-name">Reiniciar</span>
                         </a>
                     </li>
                     <li class="nav-main-item">
-                        <a @click="showAlertConfirm('Sesión', '¿Está seguro de cerrar la sesión?', 'question', 'logout')" class="nav-main-link" style="cursor:pointer;">
+                        <a @click="showAlertConfirm('Sesión', '¿Está seguro de cerrar la sesión?', 'question', 'logout')"
+                            class="nav-main-link" style="cursor:pointer;">
                             <i class="nav-main-link-icon fa fa-sign-out-alt"></i>
                             <span class="nav-main-link-name">Salir</span>
                         </a>
@@ -84,9 +93,9 @@ import useApp from '@/composables/useApp';
 
 export default {
     name: "Sidebar",
-    setup(){
+    setup() {
 
-        const {swal, command, route, deleteSession} = useApp()
+        const { swal, command, route, deleteSession } = useApp()
 
         const showAlertConfirm = (title, text, icon, funct) => {
             swal({
@@ -99,32 +108,35 @@ export default {
             }).then((result) => {
                 if (result.isConfirmed) {
                     if (funct == "restart") {
-                       command(funct)
+                        command(funct)
                     } else {
                         deleteSession()
                     }
                 }
             })
         }
- 
-        const index = computed(()=>{
-        return route.path == '/' ? 'nav-main-link active' : 'nav-main-link'
+
+        const index = computed(() => {
+            return route.path == '/' ? 'nav-main-link active' : 'nav-main-link'
+        })
+        const dash = computed(() => {
+            return route.path == '/dashboard' ? 'nav-main-link active' : 'nav-main-link'
+        })
+        const wifi = computed(() => {
+            return route.path == '/wifi' ? 'nav-main-link active' : 'nav-main-link'
         })
 
-        const wifi = computed(()=>{
-        return route.path == '/wifi' ? 'nav-main-link active' : 'nav-main-link'
+        const cloud = computed(() => {
+            return route.path == '/cloud' ? 'nav-main-link active' : 'nav-main-link'
         })
-        
-        const cloud = computed(()=>{
-        return route.path == '/cloud' ? 'nav-main-link active' : 'nav-main-link'
-        })
-        
-        const settings = computed(()=>{
-        return route.path == '/settings' ? 'nav-main-link active' : 'nav-main-link'
+
+        const settings = computed(() => {
+            return route.path == '/settings' ? 'nav-main-link active' : 'nav-main-link'
         })
 
         return {
             index,
+            dash,
             wifi,
             cloud,
             settings,

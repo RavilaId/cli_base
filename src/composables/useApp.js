@@ -4,11 +4,12 @@ import { useRoute } from 'vue-router'
 
 const progress = ref({ "type": "update", "msg": "0" })
 const index_update = ref({})
+const dash_update = ref({})
 const mqtt_activity = ref({})
 
 const useApp = () => {
 
-    const host = '192.168.20.150'
+    const host = window.location.host
 
     const toast = useToast()
 
@@ -168,6 +169,7 @@ const useApp = () => {
         command,
         route,
         index_update,
+        dash_update,
         mqtt_activity,
         deleteSession,
         deleteSession

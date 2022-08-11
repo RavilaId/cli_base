@@ -7,6 +7,12 @@ const routes = [{
         component: HomeView
     },
     {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () =>
+            import ( /* webpackChunkName: "dashboard" */ '@/views/Dashboard.vue')
+    },
+    {
         path: '/wifi',
         name: 'wifi',
         component: () =>

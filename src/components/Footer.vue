@@ -7,7 +7,7 @@
                     <a class="fw-semibold" href="https://vuejs.org" target="_blank">VUE.js</a>
                 </div>
                 <div class="col-sm-6 order-sm-1 text-center text-sm-start">
-                    <a class="fw-semibold" href="https://iothost.org" target="_blank">VUE32 V1.0</a> &copy;
+                    <a class="fw-semibold" href="https://webiot.com.ar" target="_blank">VUE32 V1.0</a> &copy;
                     <span data-toggle="year-copy"></span>
                 </div>
             </div>

@@ -16,6 +16,9 @@ let app_js_length = 0
 let cloud_js = ""
 let cloud_js_length = 0
 
+let dashboard_js = ""
+let dashboard_js_length = 0
+
 let dashmix_app_min = ""
 let dashmix_app_min_length = 0
 
@@ -90,6 +93,13 @@ promises.push(fs.readFileAsync("./dist/js/cloud.js.gz", 'hex')
     let { newData, length} = convertToHex(data)
     cloud_js = newData
     cloud_js_length = length
+    return Promise.resolve()
+}))
+promises.push(fs.readFileAsync("./dist/js/dashboard.js.gz", 'hex')
+.then((data) => {
+    let { newData, length} = convertToHex(data)
+    dashboard_js = newData
+    dashboard_js_length = length
     return Promise.resolve()
 }))
 
@@ -178,6 +188,8 @@ Promise.all(promises).finally(() => {
     const uint8_t app_js[] PROGMEM = {${app_js}};
     #define cloud_js_length ${cloud_js_length}    
     const uint8_t cloud_js[] PROGMEM = {${cloud_js}};
+    #define dashboard_js_length ${dashboard_js_length}    
+    const uint8_t dashboard_js[] PROGMEM = {${dashboard_js}};    
     #define dashmix_js_length ${dashmix_app_min_length}    
     const uint8_t dashmix_js[] PROGMEM = {${dashmix_app_min}};
     #define page404_length ${page404_js_length}    
@@ -198,7 +210,7 @@ Promise.all(promises).finally(() => {
     const uint8_t Simple_Icons_woff2[] PROGMEM = {${Simple_Line_Icons_woff2}};
     `    
     console.log("INFO: ¡Finalizada la conversión!")    
-    fs.writeFile('../vue32_esp_proyecto/src/vuejs.h',content, 'utf8',async()=>{
+    fs.writeFile('../vue32_esp_proyecto_base/src/vuejs.h',content, 'utf8',async()=>{
         console.log("INFO: ¡Archivo (vuejs.h) creado correctamente!")
     })
 })

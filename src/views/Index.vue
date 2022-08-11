@@ -173,14 +173,14 @@
           </div>
           <!-- END Panel -->
           <!-- ROW Inalámbrico & Cloud -->
-          <div class="row mb-0">
+          <div class="row mb-0" >
               <!-- Cloud -->
               <div class="col-md-6 mb-3">
                   <div class="block block-rounded block-link-shadow h-100 mb-0">
                       <div class="block-content p-0 progress" style="height: 2px;">
                           <div :class="mqtt_class_02" role="progressbar" style="width: 100%;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                       </div>
-                      <div class="block-content block-content-full">
+                      <div class="block-content block-content-full" >
                           <div>
                               <p class="fs-lg fw-semibold mb-0">
                                   Cloud
@@ -360,7 +360,7 @@
                                       <tr>
                                           <td class="col-3">Fabricante:</td>
                                           <td class="col-6">
-                                               {{index_datos.device_manufacturer || "IOTHOST"}}
+                                               {{index_datos.device_manufacturer || "WEBIOT"}}
                                           </td>
                                       </tr>
                                   </table>
