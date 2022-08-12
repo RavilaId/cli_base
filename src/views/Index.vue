@@ -83,33 +83,33 @@
                               <div class="col-4 border-end">
                                   <div class="py-3">
                                       <div class="item item-circle bg-body-light mx-auto">
-                                          <i class="fa fa-memory text-primary"></i>
+                                          <i class="fa fa-2x fa-thermometer-half text-primary"></i>
                                       </div>
                                       <p class="fs-3 fw-medium mt-3 mb-0">
-                                          {{ram_percent_free.toFixed(2)}} %
+                                          {{index_datos.temperatura.toFixed(2) }} °C
                                       </p>
                                       <p class="text-muted mb-0">
-                                          RAM Disponible
+                                          Temperatura
                                       </p>
                                   </div>
                               </div>
                               <div class="col-4 border-end">
                                   <div class="py-3">
                                       <div class="item item-circle bg-body-light mx-auto">
-                                          <i class="fa fa-satellite-dish text-primary"></i>
+                                          <i class="fa fa-2x fa-tint text-primary"></i>
                                       </div>
                                       <p class="fs-3 fw-medium mt-3 mb-0">
-                                          {{index_datos.wifi_signal || 0}} %
+                                          {{index_datos.humedad}} %
                                       </p>
                                       <p class="text-muted mb-0">
-                                          Señal WIFi
+                                          Humedad
                                       </p>
                                   </div>
                               </div>
                               <div class="col-4">
                                   <div class="py-3">
                                       <div class="item item-circle bg-body-light mx-auto">
-                                          <i class="fa fa-globe-americas text-primary"></i>
+                                          <i class="fa fa-2x fa-globe-americas text-primary"></i>
                                       </div>
                                       <p class="fs-3 fw-medium mt-3 mb-0">
                                            {{index_datos.mqtt_activity || "Unknown"}}
@@ -130,13 +130,13 @@
                               <div class="col-4 border-end border-black-op">
                                   <div class="py-3">
                                       <div class="item item-circle bg-black-25 mx-auto">
-                                          <i class="fa fa-hdd text-white"></i>
+                                          <i class="fa fa-wifi text-white"></i>
                                       </div>
                                       <p class="text-white fs-3 fw-medium mt-3 mb-0">
-                                          {{spiffs_percent_used.toFixed(2)}} %
+                                          {{index_datos.wifi_signal || 0}} %
                                       </p>
                                       <p class="text-white-75 mb-0">
-                                          SPIFFS Usada
+                                          Señal
                                       </p>
                                   </div>
                               </div>
@@ -402,8 +402,8 @@ export default {
             mqtt_class_02,
             wifi_class_03,
             mqtt_class_03,
-            spiffs_percent_used,
-            ram_percent_free
+            temperatura,
+            humedad
         } = useIndex()
 
         return{
@@ -420,8 +420,8 @@ export default {
             mqtt_class_02,
             wifi_class_03,
             mqtt_class_03,
-            spiffs_percent_used,
-            ram_percent_free
+            temperatura,
+            humedad
         }
     }
 }

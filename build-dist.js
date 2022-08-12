@@ -210,7 +210,7 @@ Promise.all(promises).finally(() => {
     const uint8_t Simple_Icons_woff2[] PROGMEM = {${Simple_Line_Icons_woff2}};
     `    
     console.log("INFO: ¡Finalizada la conversión!")    
-    fs.writeFile('../vue32_esp_proyecto_base/src/vuejs.h',content, 'utf8',async()=>{
+    fs.writeFile('../esp_base/src/vuejs.h',content, 'utf8',async()=>{
         console.log("INFO: ¡Archivo (vuejs.h) creado correctamente!")
     })
 })

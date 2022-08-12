@@ -39,7 +39,7 @@
                         </router-link>
                     </li>
                     <li class="nav-main-item">
-                        <router-link :to="{ name: 'dashboard' }" :class="index">
+                        <router-link :to="{ name: 'dashboard' }" :class="dashboard">
                             <i class="nav-main-link-icon fa fa-tachometer-alt"></i>
                             <span class="nav-main-link-name">Dashboard</span>
                         </router-link>
@@ -119,7 +119,7 @@ export default {
         const index = computed(() => {
             return route.path == '/' ? 'nav-main-link active' : 'nav-main-link'
         })
-        const dash = computed(() => {
+        const dashboard = computed(() => {
             return route.path == '/dashboard' ? 'nav-main-link active' : 'nav-main-link'
         })
         const wifi = computed(() => {
@@ -136,7 +136,7 @@ export default {
 
         return {
             index,
-            dash,
+            dashboard,
             wifi,
             cloud,
             settings,

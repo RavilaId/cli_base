@@ -60,17 +60,18 @@ const useIndex = () => {
     const mqtt_class_03 = computed(() => {
         return index_datos.value["mqtt_online"] ? "block block-rounded block-link-shadow bg-success" : "block block-rounded block-link-shadow bg-danger"
     })
-    const spiffs_percent_used = computed(() => {
-        return index_datos.value["device_spiffs_used"] * 100 / index_datos.value["device_spiffs_total"]
+    const temperatura = computed(() => {
+        return index_datos.value["temperatura"]
     })
-    const ram_percent_free = computed(() => {
-        return index_datos.value["device_ram_available"] * 100 / index_datos.value["device_ram_size"]
+    const humedad = computed(() => {
+        return index_datos.value["humedad"]
     })
 
     watch(() => index_update.value,
-        ({ device_time_active, device_ram_available, mqtt_online, mqtt_server, wifi_online, wifi_rssi, wifi_signal }) => {
+        ({ device_time_active, humedad, temperatura, mqtt_online, mqtt_server, wifi_online, wifi_rssi, wifi_signal }) => {
             index_datos.value["device_time_active"] = device_time_active
-            index_datos.value["device_ram_available"] = device_ram_available
+            index_datos.value["humedad"] = humedad
+            index_datos.value["temperatura"] = temperatura            
             index_datos.value["mqtt_online"] = mqtt_online
             index_datos.value["mqtt_server"] = mqtt_server
             index_datos.value["wifi_online"] = wifi_online
@@ -95,10 +96,9 @@ const useIndex = () => {
         mqtt_class_02,
         wifi_class_03,
         mqtt_class_03,
-        spiffs_percent_used,
-        ram_percent_free
+        temperatura,
+        humedad
     }
-
 }
 
 
