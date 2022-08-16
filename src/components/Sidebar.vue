@@ -17,8 +17,7 @@
                 <div>
                     <!-- Close Sidebar, Visible only on mobile screens -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-toggle="layout"
-                        data-action="sidebar_close">
+                    <button type="button" class="btn btn-sm btn-alt-secondary d-lg-none" data-action="sidebar_close"  data-toggle="layout">
                         <i class="fa fa-times-circle"></i>
                     </button>
                     <!-- END Close Sidebar -->
@@ -51,14 +50,15 @@
                             <span class="nav-main-link-name">WIFI</span>
                         </router-link>
                     </li>
-                    <li class="nav-main-item">
+                    <li class="nav-main-item ">
                         <router-link :to="{ name: 'cloud' }" :class="cloud">
                             <i class="nav-main-link-icon fa fa-cloud"></i>
                             <span class="nav-main-link-name">Cloud</span>
                         </router-link>
                     </li>
                     <li class="nav-main-item">
-                        <router-link :to="{ name: 'settings' }" :class="settings">
+                        <router-link :to="{ name: 'settings' }" :class="settings"          
+                        v-on:click="showSidebar">
                             <i class="nav-main-link-icon fa fa-cog"></i>
                             <span class="nav-main-link-name">Configurar</span>
                         </router-link>
