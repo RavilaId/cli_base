@@ -22,7 +22,7 @@ export default {
     props:{
         title:{
             type: String,
-            default: "VUE32 Admin Tool"
+            default: "WEBIOT Admin Tool"
         },
         page:{
             type: String,
