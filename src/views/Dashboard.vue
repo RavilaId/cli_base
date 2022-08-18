@@ -6,7 +6,85 @@
         <!-- END Hero -->
         <!-- Page Content -->
         <div class="content">
+<<<<<<< HEAD
            <!-- ROW Inalámbrico & Cloud -->
+=======
+            <!-- Panel -->
+            <div class="row">
+              <div class="col-md-6 col-xl-3">
+                  <div class="block block-rounded block-link-shadow bg-primary">
+                      <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                          <div>
+                              <i class="fa fa-2x fa-barcode text-primary-lighter"></i>
+                          </div>
+                          <div class="ms-3 text-end">
+                              <p class="text-white fs-3 fw-medium mb-0">
+                                  Dispositivo
+                              </p>
+                              <p class="text-white-75 mb-0">
+                                  {{dash_datos.device_serial || "ESP3200000000000"}}
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                  <div :class="mqtt_class_03">
+                      <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                          <div>
+                              <i class="fa fa-2x fa-cloud text-success-light"></i>
+                          </div>
+                          <div class="ms-3 text-end">
+                              <p class="text-white fs-3 fw-medium mb-0">
+                                  Cloud
+                              </p>
+                              <p class="text-white-75 mb-0">
+                                  ({{dash_datos.mqtt_server || "disconnected"}}) - <label for=""> {{mqtt_status}}</label>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                  <div :class="wifi_class_03">
+                      <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                          <div class="me-3">
+                              <p class="text-white fs-3 fw-medium mb-0">
+                                  WiFi
+                              </p>
+                              <p class="text-white-75 mb-0">
+                                  ({{dash_datos.wifi_ssid || "disconnected"}}) - <label for=""> {{wifi_status}}</label>
+                              </p>
+                          </div>
+                          <div>
+                              <i class="fa fa-2x fa-wifi text-success-light"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                  <div class="block block-rounded block-link-shadow bg-warning">
+                      <div class="block-content block-content-full d-flex align-items-center justify-content-between">
+                          <div class="me-3">
+                              <p class="text-white fs-3 fw-medium mb-0">
+                                  WiFi RSSI
+                              </p>
+                              <p class="text-white-75 mb-0">
+                                  {{dash_datos.wifi_rssi}} dBm
+                              </p>
+                          </div>
+                          <div>
+                              <i class="fa fa-2x fa-signal text-success-light"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+           
+
+            </div>
+            <!-- END Panel -->
+          <!-- ROW Inalámbrico & Cloud -->
+>>>>>>> c29abd2569d6a6229db793d23f9648cd9ac509f3
           <div class="row mb-0" >
               <!-- Cloud -->
               <div class="col-md-6 mb-3">
@@ -206,7 +284,10 @@
               <!-- END Inalámbirco -->
           </div>
           <!-- END ROW Hardware & Software -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> c29abd2569d6a6229db793d23f9648cd9ac509f3
             {{ dash_datos }}
         </div>
         <!-- END Page Content -->

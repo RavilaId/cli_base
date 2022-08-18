@@ -24,7 +24,7 @@ chainWebpack: config =>{
   config
   .plugin('html')
   .tap(args => {
-    args[0].title = 'VUE32 | AdminTool'
+    args[0].title = 'WEBIOT | AdminTool'
     return args
   })
 }

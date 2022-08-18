@@ -1,5 +1,10 @@
 *************************************
-*
+* Despues de clonar
+*************************************
+npm install
+
+*************************************
+* Para ejecutar servidor
 *************************************
 npm run serve
 
@@ -12,3 +17,10 @@ npm run build
 
 npm run copy
 ***************************************
+<div id="page-container" class="sidebar-dark enable-page-overlay side-scroll page-header-fixed page-header-dark side-trans-enabled">
+    <div id="page-overlay"></div>
+    <!-- Sidebar -->
+
+<div id="page-container" class="sidebar-dark enable-page-overlay side-scroll page-header-fixed page-header-dark side-trans-enabled sidebar-0 sidebar-o-xs">
+    <div id="page-overlay"></div>
+    |<!-- Sidebar -->

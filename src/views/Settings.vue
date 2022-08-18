@@ -5,7 +5,7 @@
         <!-- END Hero -->
         <!-- Page Content -->
         <div class="content">
-            <h2 class="content-heading">VUE32 Admin Tool</h2>
+            <h2 class="content-heading">WEBIOT Admin Tool</h2>
             <div class="row">
                 <!-- Your Block -->
                 <div class="col-md-7">
