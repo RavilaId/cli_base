@@ -66,11 +66,19 @@ const useIndex = () => {
     const humedad = computed(() => {
         return index_datos.value["humedad"]
     })
+    const luz = computed(() => {
+        return index_datos.value["luz"]
+    })
+    const riego = computed(() => {
+        return index_datos.value["riego"]
+    })
 
     watch(() => index_update.value,
-        ({ device_time_active, humedad, temperatura, mqtt_online, mqtt_server, wifi_online, wifi_rssi, wifi_signal }) => {
+        ({ device_time_active, humedad, temperatura, luz, riego, mqtt_online, mqtt_server, wifi_online, wifi_rssi, wifi_signal }) => {
             index_datos.value["device_time_active"] = device_time_active
             index_datos.value["humedad"] = humedad
+            index_datos.value["luz"] = luz
+            index_datos.value["riego"] = riego                        
             index_datos.value["temperatura"] = temperatura            
             index_datos.value["mqtt_online"] = mqtt_online
             index_datos.value["mqtt_server"] = mqtt_server
@@ -97,7 +105,9 @@ const useIndex = () => {
         wifi_class_03,
         mqtt_class_03,
         temperatura,
-        humedad
+        humedad,
+        luz,
+        riego
     }
 }
 
