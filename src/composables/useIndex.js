@@ -66,12 +66,14 @@ const useIndex = () => {
     const humedad = computed(() => {
         return index_datos.value["humedad"]
     })
-    const luz = computed(() => {
-        return index_datos.value["luz"]
-    })
     const riego = computed(() => {
         return index_datos.value["riego"]
     })
+///
+    const luz = computed(() => {
+        return index_datos.value["luz"]
+    })
+
 
     watch(() => index_update.value,
         ({ device_time_active, humedad, temperatura, luz, riego, mqtt_online, mqtt_server, wifi_online, wifi_rssi, wifi_signal }) => {
