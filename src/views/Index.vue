@@ -192,11 +192,7 @@ import useIndex from '@/composables/useIndex'
 export default {
     components: { Hero },
     name: 'Index',
-<<<<<<< HEAD
-        methods: {
-=======
-    methods: {
->>>>>>> c29abd2569d6a6229db793d23f9648cd9ac509f3
+       methods: {
         cambiar: function(event){
             alert('HOLA')
         }

@@ -6,9 +6,7 @@
         <!-- END Hero -->
         <!-- Page Content -->
         <div class="content">
-<<<<<<< HEAD
            <!-- ROW Inalámbrico & Cloud -->
-=======
             <!-- Panel -->
             <div class="row">
               <div class="col-md-6 col-xl-3">
@@ -84,7 +82,6 @@
             </div>
             <!-- END Panel -->
           <!-- ROW Inalámbrico & Cloud -->
->>>>>>> c29abd2569d6a6229db793d23f9648cd9ac509f3
           <div class="row mb-0" >
               <!-- Cloud -->
               <div class="col-md-6 mb-3">
@@ -284,10 +281,6 @@
               <!-- END Inalámbirco -->
           </div>
           <!-- END ROW Hardware & Software -->
-<<<<<<< HEAD
-
-=======
->>>>>>> c29abd2569d6a6229db793d23f9648cd9ac509f3
             {{ dash_datos }}
         </div>
         <!-- END Page Content -->
